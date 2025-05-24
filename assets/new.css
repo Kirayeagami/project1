@@ -10,6 +10,9 @@
     --text: #f5f6fa;
     --accent: #ffe156;
     --radius: 18px;
+    --profile-size: 120px;
+    --profile-border: 5px solid var(--accent);
+    --profile-shadow: 0 6px 32px 0 rgba(79, 140, 255, 0.25);
     --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
@@ -163,6 +166,61 @@ li::before {
     to { transform: scale(1.3);}
 }
 
+.section-title {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+    transform: translateX(-50%);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.hero img {
+    width: var(--profile-size);
+    height: var(--profile-size);
+    border-radius: 50%;
+    border: var(--profile-border);
+    box-shadow: var(--profile-shadow);
+    object-fit: cover;
+    animation: profileEntrance 1.5s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.hero img:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 20px 5px var(--accent);
+}
+
+@keyframes profileEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 700px) {
     .container {
@@ -191,4 +249,115 @@ li::before {
         padding: 0.7rem 1.2rem;
         font-size: 1rem;
     }
+}
+
+/* Projects Section Styles */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    perspective: 1200px;
+}
+
+.project-card {
+    background: #12141d;
+    border-radius: var(--radius);
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(.77,0,.18,1), box-shadow 0.5s;
+    cursor: pointer;
+    animation: fadeInUp 1s cubic-bezier(.77,0,.18,1) both;
+    transform-style: preserve-3d;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project-card:hover {
+    transform: translateY(-15px) scale(1.05) rotateY(5deg);
+    box-shadow: 0 25px 70px 0 rgba(0, 123, 255, 0.7);
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 4px solid #007bff;
+    transition: border-color 0.3s, transform 0.5s;
+    filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.7));
+}
+
+.project-card:hover .project-image {
+    border-color: #00d4ff;
+    transform: scale(1.05) rotate(1deg);
+}
+
+.project-card h3 {
+    margin: 1rem;
+    color: #00d4ff;
+    font-size: 1.6rem;
+    text-shadow: 0 0 10px #00d4ff;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.project-card:hover h3 {
+    color: #007bff;
+    text-shadow: 0 0 15px #007bff;
+}
+
+.project-card p {
+    margin: 0 1rem 1rem 1rem;
+    color: #cfd8dc;
+    flex-grow: 1;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+.project-card:hover p {
+    color: #00d4ff;
+}
+
+.project-card .button {
+    margin: 0 1rem 1rem 1rem;
+    align-self: flex-start;
+    box-shadow: 0 2px 12px 0 rgba(0, 212, 255, 0.25);
+    animation: buttonPulse 2s infinite alternate;
+    background: linear-gradient(45deg, #00d4ff, #007bff);
+    color: #12141d;
+    font-weight: 700;
+    padding: 0.8rem 2.2rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.project-card .button:hover {
+    box-shadow: 0 0 24px 8px rgba(0, 212, 255, 0.6);
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    color: #12141d;
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* Additional Animations */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(0, 212, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.3);
+    }
+}
+
+.project-card .button {
+    animation: pulseGlow 3s infinite;
 }
