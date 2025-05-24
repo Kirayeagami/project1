@@ -76,4 +76,4 @@ To show your favorite or important projects on your profile:
 
 ---
 
-Would you like me to generate a sample `README.md` file for your GitHub profile automatically using your existing project info?
+

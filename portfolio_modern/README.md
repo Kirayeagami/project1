@@ -37,4 +37,4 @@ You can deploy this site easily on GitHub Pages, Netlify, or Vercel by uploading
 
 ## License
 
-MIT License
+BIT License
