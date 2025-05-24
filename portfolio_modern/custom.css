@@ -1,0 +1,258 @@
+/* Finalized Dark Theme Custom styles inspired by Enrico Deiana portfolio */
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #f5f1e9;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #cfcfcf;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: #00cfff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #00a3cc;
+  outline: none;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #00cfff;
+  color: #121212;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00cfff88;
+  border: none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #00a3cc;
+  box-shadow: 0 0 20px #00a3cccc;
+  outline: none;
+}
+
+/* Secondary buttons */
+.btn-secondary {
+  background-color: transparent;
+  color: #00cfff;
+  border: 2px solid #00cfff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #00cfff;
+  color: #121212;
+  outline: none;
+}
+
+/* Project cards */
+.project-card {
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00cfff44;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover,
+.project-card:focus {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px #00cfffaa;
+  outline: none;
+}
+
+.project-image {
+  height: 12rem;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Skill items */
+.skill-item {
+  background-color: #1e1e1e;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  font-weight: 600;
+  box-shadow: 0 0 10px #00cfff44;
+  transition: transform 0.3s ease;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.skill-item:hover,
+.skill-item:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00cfffaa;
+  outline: none;
+}
+
+/* Dark mode toggle button */
+#theme-toggle {
+  font-size: 1.5rem;
+  line-height: 1;
+  border: none;
+  background: transparent;
+  color: #00cfff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus {
+  color: #00a3cc;
+  outline: none;
+}
+
+/* Custom cursor */
+#cursor {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #00cfff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  z-index: 9999;
+  background-color: transparent;
+}
+
+/* Cursor hover effect */
+a:hover ~ #cursor,
+button:hover ~ #cursor,
+.project-card:hover ~ #cursor {
+  transform: translate(-50%, -50%) scale(2);
+  background-color: rgba(0, 207, 255, 0.3);
+}
+
+/* Fade-in animation for sections */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero animations */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-animate.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.hero-animate.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.hero-animate.delay-300 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility classes */
+.opacity-0 {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.opacity-0.fallback-visible {
+  opacity: 1 !important;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+/* Hero animations fallback */
+.hero-animate {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  .project-image {
+    height: 10rem;
+  }
+}

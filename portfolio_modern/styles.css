@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-600 to-cyan-400 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-400;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-cyan-400 to-blue-600 text-gray-900 font-semibold py-2 px-4 rounded-md shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400;
+}
+
+/* Project card */
+.project-card {
+  @apply bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-cyan-500/50 cursor-pointer;
+}
+
+.project-image {
+  @apply bg-cover bg-center h-48;
+}
+
+/* Skill item */
+.skill-item {
+  @apply p-4 bg-gray-800 rounded-lg shadow-md text-lg font-semibold;
+}
+
+/* Custom cursor */
+#cursor {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #00cfff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, background-color 0.3s ease;
+  z-index: 9999;
+}
+
+/* Dark mode toggle button */
+#theme-toggle {
+  @apply fixed top-4 right-4 z-50 p-2 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
