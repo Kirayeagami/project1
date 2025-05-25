@@ -1,0 +1,20 @@
+{
+  "name": "Rajkumar Portfolio",
+  "short_name": "Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00cfff",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/7NV0mNm9/IMG-20230803-013043224-transformed-x4-x16.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/7NV0mNm9/IMG-20230803-013043224-transformed-x4-x16.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
