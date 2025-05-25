@@ -3,7 +3,7 @@
 
 ### 🚀 My Projects
 
-🔸 [Project1 - E-Commerce Site](https://your-live-link.com)  
+🔸 [Project1 - E-Commerce Site](https://my-live-link.com)  
 🗂️ [GitHub Repo](https://github.com/Kirayeagami/project1)  
 💡 Tech: HTML, CSS, JS, PHP, MySQL
 
@@ -48,9 +48,9 @@ You can deploy this site easily on GitHub Pages, Netlify, or Vercel by uploading
 - [Lenis](https://github.com/studio-freight/lenis)
 - TailwindCSS (via CDN or precompiled styles)
 
-## License
+<!-- ## License
 
-BIT License
+BIT License -->
 
 
 
