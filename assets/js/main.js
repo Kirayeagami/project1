@@ -4,6 +4,8 @@
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
+
+
 // Ensure default theme is set
 if (!html.classList.contains('light') && !html.classList.contains('dark')) {
   html.classList.add('dark'); // default to dark mode

@@ -3,141 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rajkumar Portfolio</title>
-      <link rel="shortcut icon" href="https://i.ibb.co/7NV0mNm9/IMG-20230803-013043224-transformed-x4-x16.jpg" type="image/png" />
+  <title>Rajkumar | Creative Developer</title>
+  <link rel="shortcut icon" href="https://i.ibb.co/7NV0mNm9/IMG-20230803-013043224-transformed-x4-x16.jpg" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" /> -->
-  <link href="assets/css/index.css" rel="stylesheet" />
-  <!-- Dark mode toggle -->
-  <button id="theme-toggle" aria-label="Toggle Dark Mode" class="fixed top-4 right-4 z-50 p-2 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-    🌙
-  </button>
-  
-
-  <!-- Custom cursor -->
-  <div id="cursor" class=" pointer-events-none w-6 h-6 rounded-full border-2 border-blue-500 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-150"></div>
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <style>
+    body { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="dark">
+  <!-- Loader / Logo -->
+  <div class="logo kira" id="preloader" aria-label="Logo KIRA" style="position: fixed; top: 0.5rem; left: 1rem; z-index: 1000; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: #00cfff; cursor: default; user-select: none;">
+    KIRA♾️
+  </div>
+  <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
 
   <!-- Hero Section -->
-  <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-    <p class="uppercase tracking-widest text-sm text-blue-400 mb-2 hero-animate">Product Designer</p>
-    <h1 class="text-7xl font-playfair font-bold mb-4 hero-animate delay-100">
-      Creating <span class="italic font-normal">delightful</span> <br />
-      experiences <span class="font-semibold">for your business</span>
-    </h1>
-    <p class="max-w-xl text-lg font-montserrat mb-8 hero-animate delay-200">
-      I craft beautiful and functional web experiences. Passionate about modern design, clean code, and bringing ideas to life. Let's build something amazing together!
-    </p>
-    <a href="#projects" class="btn-primary hero-animate delay-300">
-      <span class="btn-text">View My Work</span>
-      <span class="btn-icon" aria-hidden="true" style="display:none;">⤓</span>
-    </a>
+  <section id="hero">
+      <div class="hero-bg-anim" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+    <p class="hero-animate">Product Designer</p>
+    <h1 class="hero-animate delay-100">Creating <span>delightful</span> <br /> experiences <span>for your business</span></h1>
+    <p class="hero-animate delay-200">I craft beautiful and functional web experiences. Passionate about modern design, clean code, and bringing ideas to life. Let's build something amazing together!</p>
+    <a href="#projects" class="btn-primary hero-animate delay-300">View My Work</a>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="max-w-4xl mx-auto px-6 py-20 fade-in-section">
-    <h2 class="text-4xl font-playfair font-bold mb-6 text-center">About Me</h2>
-    <div class="flex flex-col md:flex-row items-center gap-8">
-      <img src="https://i.ibb.co/WvdZfr4G/IMG20250127171054.jpg" alt="Rajkumar Profile" class="w-48 h-48 rounded-full border-4 border-blue-500 filter grayscale transition duration-300 hover:grayscale-0" />
-      <p id="aboutp" class="text-lg leading-relaxed font-montserrat">
-        I am a passionate developer and designer focused on creating beautiful, functional, and user-friendly web experiences. I specialize in modern web technologies and enjoy bringing ideas to life with clean code and creative design.
-      </p>
+  <section id="about" class="fade-in-section">
+    <h2>About Me</h2>
+    <div>
+      <img src="https://i.ibb.co/WvdZfr4G/IMG20250127171054.jpg" alt="Rajkumar Profile" />
+      <p id="aboutp">I am a passionate developer and designer focused on creating beautiful, functional, and user-friendly web experiences. I specialize in modern web technologies and enjoy bringing ideas to life with clean code and creative design.</p>
     </div>
   </section>
 
+    <!-- Scrolling Marquee/Loop Section -->
+    <div class="footer-1-scrolling-section py-8">
+      <div class="scrolling-loop-item flex gap-4 justify-center items-center animate-marquee">
+        <h2 class="footer-1-heading text-2xl font-bold">portfolio</h2>
+        <span class="mx-2">•</span>
+        <h2 class="footer-1-heading text-2xl font-bold">KIRA</h2>
+        <span class="mx-2">•</span>
+        <h2 class="footer-1-heading text-2xl font-bold">portfolio</h2>
+        <span class="mx-2">•</span>
+        <h2 class="footer-1-heading text-2xl font-bold">KIRA</h2>
+        <span class="mx-2">•</span>
+        <h2 class="footer-1-heading text-2xl font-bold">portfolio</h2>
+        <span class="mx-2">•</span>
+        <h2 class="footer-1-heading text-2xl font-bold">KIRA</h2>
+        <span class="mx-2">•</span>
+        <h2 class="footer-1-heading text-2xl font-bold">portfolio</h2>
+        <span class="mx-2">•</span>
+        <h2 class="footer-1-heading text-2xl font-bold">KIRA</h2>
+      </div>
+    </div>  
+
   <!-- Projects Section -->
-  <section id="projects" class="max-w-6xl mx-auto px-6 py-20 fade-in-section">
-    <h2 class="text-4xl font-playfair font-bold mb-12 text-center">My Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-      <!-- Project Card Example -->
-      <article class="project-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-blue-500/50 cursor-pointer">
-        <video class="w-full h-48 object-cover" autoplay muted loop playsinline>
+  <section id="projects" class="fade-in-section">
+    <h2>My Projects</h2>
+    <div class="grid">
+      <article class="project-card">
+        <video autoplay muted loop playsinline>
           <source src="assets/videos/project1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-2">Fashion Ecom</h3>
-          <p class="mb-4">K I R A is a fashion e-commerce website designed to provide users with a seamless shopping experience. The platform allows users to browse, search, and purchase a variety of fashion products.</p>
-          <div class="flex justify-between items-center text-sm text-blue-400 mb-4">
-            <span>2025</span>
-            <span>Php, Html, Css, JavaScript</span>
-          </div>
+        <div>
+          <h3>Fashion Ecom</h3>
+          <p>K I R A is an e-commerce website designed to provide users with a seamless shopping experience.</p>
+          <div><span>2025</span> <span>PHP, HTML, CSS, JS</span></div>
           <a href="https://github.com/Kirayeagami/fashion_experiment" class="btn-secondary">View Project</a>
         </div>
       </article>
-      <!-- Repeat for other projects -->
-      <article class="project-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-blue-500/50 cursor-pointer">
-        <!-- <img src="https://via.placeholder.com/400x240?text=Project+2" alt="Project 2" class="w-full h-48 object-cover" /> -->
-        <video class="w-full h-48 object-cover" autoplay muted loop playsinline>
+
+      <article class="project-card">
+        <video autoplay muted loop playsinline>
           <source src="assets/videos/project2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-2">Fun Experiment</h3>
-          <p class="mb-4">This is a Fun Project about Portfolio.</p>
-          <div class="flex justify-between items-center text-sm text-blue-400 mb-4">
-            <span>2025</span>
-            <span>HTML , CSS</span>
-          </div>
+        <div>
+          <h3>Fun Experiment</h3>
+          <p>This is a fun portfolio project.</p>
+          <div><span>2025</span> <span>HTML, CSS</span></div>
           <a href="https://github.com/Kirayeagami/portfolios" class="btn-secondary">View Project</a>
         </div>
       </article>
-      <!-- <article class="project-card bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-blue-500/50 cursor-pointer">
-        <img src="https://via.placeholder.com/400x240?text=Project+3" alt="Project 3" class="w-full h-48 object-cover" />
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold mb-2">Project Title 3</h3>
-          <p class="mb-4">A brief description of project 3 goes here. This is a placeholder text.</p>
-          <div class="flex justify-between items-center text-sm text-blue-400 mb-4">
-            <span>2022</span>
-            <span>Angular, Express</span>
-          </div>
-          <a href="#" class="btn-secondary">View Project</a>
-        </div>
-      </article> -->
     </div>
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="max-w-4xl mx-auto px-6 py-20 fade-in-section">
-    <h2 class="text-4xl font-playfair font-bold mb-12 text-center">Skills & Services</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div class="skill-item p-4 bg-gray-800 rounded-lg shadow-md">JavaScript</div>
-      <!-- <div class="skill-item p-4 bg-gray-800 rounded-lg shadow-md">React</div> -->
-      <!-- <div class="skill-item p-4 bg-gray-800 rounded-lg shadow-md">Node.js</div> -->
-      <div class="skill-item p-4 bg-gray-800 rounded-lg shadow-md">CSS3</div>
-      <!-- <div class="skill-item p-4 bg-gray-800 rounded-lg shadow-md">GSAP</div> -->
-      <div class="skill-item p-4 bg-gray-800 rounded-lg shadow-md">TailwindCSS</div>
-      <div class="skill-item p-4 bg-gray-800 rounded-lg shadow-md">Git</div>
-      <div class="skill-item p-4 bg-gray-800 rounded-lg shadow-md">UI/UX Design</div>
+  <section id="skills" class="fade-in-section">
+    <h2>Skills & Services</h2>
+    <div class="grid">
+      <div class="skill-item">JavaScript</div>
+      <div class="skill-item">CSS3</div>
+      <div class="skill-item">TailwindCSS</div>
+      <div class="skill-item">Git</div>
+      <div class="skill-item">UI/UX Design</div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="max-w-4xl mx-auto px-6 py-20 fade-in-section">
-    <h2 class="text-4xl font-playfair font-bold mb-8 text-center">Let's Work Together</h2>
-    <p class="text-center mb-8 font-montserrat">Feel free to reach out to me via email or social media.</p>
-    <form class="max-w-md mx-auto flex flex-col gap-4" action="mailto:07632032805raj@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required class="p-3 rounded-md bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none" />
-      <input type="email" name="email" placeholder="Your Email" required class="p-3 rounded-md bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none" />
-      <textarea name="message" rows="5" placeholder="Your Message" required class="p-3 rounded-md bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none"></textarea>
+  <section id="contact" class="fade-in-section">
+    <h2>Let's Work Together</h2>
+    <p>Feel free to reach out to me via email or social media.</p>
+    <form action="mailto:07632032805raj@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit" class="btn-primary">Send Message</button>
     </form>
   </section>
 
   <!-- Footer -->
-  <footer class="site-footer bg-gray-900 text-gray-500 text-center py-6">
+  <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 Rajkumar. All rights reserved.</p>
-      <div class="flex justify-center gap-6 mt-4">
-        <a href="https://github.com/Kirayeagami" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-blue-400">GitHub</a>
-        <a href="https://linkedin.com/in/rajkumar-das-7391a7313" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-blue-400">LinkedIn</a>
-        <a href="https://www.twitter.com/@KiraYeagami" target="_blank" rel="noopener" aria-label="Twitter" class="hover:text-blue-400">Twitter</a>
-        <i class="fa-brands fa-instagram"><a href="https://www.instagram.com/kira_yeagami?igsh=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener">Instagram</a></i>
+      <div>
+        <a href="https://github.com/Kirayeagami" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/rajkumar-das-7391a7313" target="_blank">LinkedIn</a>
+        <a href="https://www.twitter.com/@KiraYeagami" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/kira_yeagami?igsh=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a>
+        <p>&copy; 2025 Rajkumar. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="assets/js/main.js"></script>
 </body>
 </html>

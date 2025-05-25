@@ -20,6 +20,37 @@ body {
   line-height: 1.6;
 }
 
+
+    /* Hero background animation */
+    .hero-bg-anim {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-bg-anim span {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, #00cfff44 0%, transparent 80%);
+      animation: heroBgMove 8s linear infinite alternate;
+      opacity: 0.5;
+    }
+    .hero-bg-anim span:nth-child(1) {
+      width: 300px; height: 300px; left: 10%; top: 20%; animation-delay: 0s;
+    }
+    .hero-bg-anim span:nth-child(2) {
+      width: 200px; height: 200px; right: 15%; top: 40%; animation-delay: 2s;
+    }
+    .hero-bg-anim span:nth-child(3) {
+      width: 250px; height: 250px; left: 40%; bottom: 10%; animation-delay: 4s;
+    }
+    @keyframes heroBgMove {
+      0% { transform: scale(1) translateY(0); }
+      100% { transform: scale(1.2) translateY(-30px); }
+    }
+
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
@@ -545,3 +576,37 @@ html.dark .site-footer a {
 html.dark .site-footer a:hover {
   color: #00a3cc;
 }
+
+/* Animation for KIRA logo */
+.kira{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #00cfff;
+  cursor: default;
+  user-select: none;
+  animation: kiraGlow 2s ease-in-out infinite alternate;
+}
+@keyframes kiraGlow {
+  0% {
+    text-shadow: 0 0 5px #00cfff, 0 0 10px #00cfff, 0 0 20px #00cfff;
+    color: #00cfff;
+  }
+  100% {
+    text-shadow: 0 0 20px #00e0ff, 0 0 30px #00e0ff, 0 0 40px #00e0ff;
+    color: #00e0ff;
+  }
+}
+
+/* Marquee animation for scrolling loop section */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: marquee 20s linear infinite;
+}    
