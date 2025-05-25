@@ -11,69 +11,46 @@
 🗂️ [GitHub Repo](https://github.com/Kirayeagami/music-app)
 
 ---
+# Rajkumar Modern Portfolio
 
-### 🧠 Code Snippets
+This is a modern, minimal, and futuristic personal portfolio website inspired by Enrico Deiana’s portfolio.
 
-```php
-// Sample PHP snippet from my e-commerce backend
-$query = "SELECT * FROM products WHERE category = 'electronics'";
-$result = mysqli_query($conn, $query);
+## Features
 
+- Dark theme by default with toggle for light mode
+- Full-screen layout with large clean typography
+- Smooth animations using GSAP
+- Smooth scrolling using Lenis
+- Custom animated cursor that reacts to hover
+- Subtle background motion effects
+- Responsive design for mobile and desktop
+- Sections: Hero, About, Projects, Skills, Contact, Footer
 
+## Installation
 
-<!-- Sample HTML product card -->
-<div class="product-card">
-  <img src="product.jpg" />
-  <h3>Smartphone</h3>
-</div>
+1. Clone the repository or download the files.
+2. Open `index.html` in a modern browser.
+3. No build step required; all dependencies are loaded via CDN.
 
+## Usage
 
+- Use the dark mode toggle button at the top-right to switch themes.
+- Scroll to explore the portfolio sections.
+- Hover over links, buttons, and project cards to see cursor animations.
 
+## Deployment
 
-You can add images, GIFs, shields, and even animated badges.
+You can deploy this site easily on GitHub Pages, Netlify, or Vercel by uploading the project folder.
 
----
+## Dependencies
 
-## ✅ 4. Host Live Projects (Optional but Recommended)
+- [GSAP](https://greensock.com/gsap/)
+- [Lenis](https://github.com/studio-freight/lenis)
+- TailwindCSS (via CDN or precompiled styles)
 
-### 🔹 Option 1: Use GitHub Pages (for frontend only projects)
-1. Go to your repo → Settings → Pages
-2. Set the **branch** to `main` and `/ (root)`
-3. GitHub will host your site at:
+## License
 
+BIT License
 
-
-
-### 🔹 Option 2: Use Platforms like:
-
-| Platform         | Use For                       |
-|------------------|-------------------------------|
-| **Vercel**        | React, Next.js, Static Sites  |
-| **Netlify**       | HTML, CSS, JS, Vue, Static    |
-| **Render**        | Fullstack & backend hosting   |
-| **Glitch/Replit** | Quick code previews           |
-
-Connect your GitHub repo and it will auto-deploy when you push updates.
-
----
-
-## ✅ 5. Pin Repositories to Your Profile
-
-To show your favorite or important projects on your profile:
-
-1. Go to your GitHub Profile
-2. Click **"Customize your pins"**
-3. Pin the repositories you want to showcase
-
----
-
-## ✅ Result: You’ll Have…
-
-- 🧾 A cool GitHub profile README with links, images, snippets
-- 🧪 Live demos hosted with GitHub Pages or Netlify
-- 📁 Public repositories pinned on your profile
-- ✨ A professional look that impresses recruiters or collaborators
-
----
 
 
