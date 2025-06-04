@@ -1,0 +1,704 @@
+/* New CSS for index.html - tailored styles for portfolio_modern */
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+
+    /* Hero background animation */
+    .hero-bg-anim {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-bg-anim span {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, #00cfff44 0%, transparent 80%);
+      animation: heroBgMove 8s linear infinite alternate;
+      opacity: 0.5;
+    }
+    .hero-bg-anim span:nth-child(1) {
+      width: 300px; height: 300px; left: 10%; top: 20%; animation-delay: 0s;
+    }
+    .hero-bg-anim span:nth-child(2) {
+      width: 200px; height: 200px; right: 15%; top: 40%; animation-delay: 2s;
+    }
+    .hero-bg-anim span:nth-child(3) {
+      width: 250px; height: 250px; left: 40%; bottom: 10%; animation-delay: 4s;
+    }
+    @keyframes heroBgMove {
+      0% { transform: scale(1) translateY(0); }
+      100% { transform: scale(1.2) translateY(-30px); }
+    }
+
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #cbb282;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.125rem;
+  color: #c88b8b;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: #00cfff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #00a3cc;
+  outline: none;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #00cfff;
+  color: #121212;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00cfff88;
+  border: none;
+  display: inline-block;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #00a3cc;
+  box-shadow: 0 0 20px #00a3cccc;
+  outline: none;
+}
+
+/* Secondary buttons */
+.btn-secondary {
+  background-color: transparent;
+  color: #00cfff;
+  border: 2px solid #00cfff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #ffffff;
+  color: #121212;
+  outline: none;
+}
+
+    /* Chevron scroll indicator  */
+.chevron-scroll:hover { opacity: 1; }
+.chevron {
+    width: 48px; height: 48px; display: block;
+    stroke: #00cfff;
+    margin: 0 auto;
+    stroke-width: 4;
+    fill: none;
+    animation: chevronBounce 1.2s infinite cubic-bezier(.4,0,.2,1);
+}
+@keyframes chevronBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(16px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* Layout containers */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Sections */
+section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+#hero p {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.875rem;
+  color: #00cfff;
+  margin-bottom: 1rem;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#hero h1 span {
+  font-style: italic;
+  font-weight: 400;
+}
+
+#hero a.btn-primary {
+  margin-top: 2rem;
+}
+
+    #hero .hero-animate p span {
+            border-right: 3px solid;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 4s steps(40) infinite, blink 0.5s step-end infinite;
+        }
+
+        @keyframes typing {
+            0% { width: 0 }
+            100% { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+/* About Section */
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#about img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border: 4px solid #00cfff;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+#about img:hover {
+  filter: grayscale(0%);
+}
+
+    .about-title {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.01em;
+      background: linear-gradient(90deg, #00cfff 10%, #fff 50%, #00cfff 90%);
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: gradientMove 3s linear infinite alternate;
+
+        border-right: 3px solid;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 4s steps(40) infinite, blink 0.5s step-end infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+        @keyframes typing {
+            0% { width: 0 }
+            100% { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+#about p {
+  max-width: 600px;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #cfcfcf;
+}
+
+/* Projects Section */
+#projects {
+  text-align: center;
+}
+
+.project-card img,
+.project-card video {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+#projects .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00cfff44;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px #00cfffaa;
+}
+
+.project-image {
+  height: 12rem;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Skills Section */
+#skills {
+  text-align: center;
+}
+
+#skills .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.skill-item {
+  background-color: #1e1e1e;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  font-weight: 600;
+  box-shadow: 0 0 10px #00cfff44;
+  transition: transform 0.3s ease;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.skill-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00cfffaa;
+}
+
+/* Contact Section */
+
+        .contact-cta {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #download-cv, #email-btn, #call-btn, #proposal-btn, #pay-btn, #whatsapp-btn {
+            padding: 15px 30px;
+            background-color: #00ffcc;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+#contact {
+  text-align: center;
+}
+
+#contact p {
+  font-family: 'Playfair Display', serif;
+  color: #cbb282;
+  margin-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+#contact form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contact input,
+#contact textarea {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #eee;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #00cfff;
+  outline: none;
+}
+
+#contact button {
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  background-color: #00cfff;
+  color: #121212;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: #00a3cc;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #121212;
+  color: #666;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #00cfff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+  color: #00a3cc;
+}
+
+/* Dark mode toggle button */
+#theme-toggle {
+  font-size: 1.5rem;
+  line-height: 1;
+  border: none;
+  background: transparent;
+  color: #00cfff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus {
+  color: #00a3cc;
+  outline: none;
+}
+
+/* Custom cursor */
+#cursor {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #00cfff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  z-index: 9999;
+  background-color: transparent;
+  mix-blend-mode: difference;
+}
+
+#cursor.hovered {
+  transform: translate(-50%, -50%) scale(2);
+  background-color: rgba(0, 207, 255, 0.3);
+}
+
+/* Fade-in animation for sections */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Light mode styles */
+html.light {
+  --background-color: #ffffff;
+  --text-color: #ffffff;
+  --link-color: #1a73e8;
+  --link-hover-color: #155ab6;
+  --btn-primary-bg: #1a73e8;
+  --btn-primary-color: #ffffff;
+  --btn-primary-shadow: 0 0 12px #1a73e888;
+  --btn-primary-hover-bg: #155ab6;
+  --btn-primary-hover-shadow: 0 0 24px #155ab6cc;
+  --btn-secondary-color: #1a73e8;
+  --btn-secondary-border: #1a73e8;
+  --btn-secondary-hover-bg: #1a73e8;
+  --btn-secondary-hover-color: #ffffff;
+  --theme-toggle-color: #1a73e8;
+  --theme-toggle-hover-color: #155ab6;
+  --cursor-border-color: #1a73e8;
+  --cursor-hover-bg: rgba(26, 115, 232, 0.3);
+  --footer-bg: #f9f9f9;
+  --footer-color: #434242;
+  --footer-link-color: #1a73e8;
+  --footer-link-hover-color: #155ab6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+html.light body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+html.light a {
+  color: var(--link-color);
+}
+
+html.light a:hover,
+html.light a:focus {
+  color: var(--link-hover-color);
+}
+
+html.light .btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+  box-shadow: var(--btn-primary-shadow);
+}
+
+html.light .btn-primary:hover,
+html.light .btn-primary:focus {
+  background-color: var(--btn-primary-hover-bg);
+  box-shadow: var(--btn-primary-hover-shadow);
+}
+
+html.light .btn-secondary {
+  color: var(--btn-secondary-color);
+  border-color: var(--btn-secondary-border);
+}
+
+html.light .btn-secondary:hover,
+html.light .btn-secondary:focus {
+  background-color: var(--btn-secondary-hover-bg);
+  color: var(--btn-secondary-hover-color);
+}
+
+html.light #theme-toggle {
+  color: var(--theme-toggle-color);
+}
+
+html.light #theme-toggle:hover,
+html.light #theme-toggle:focus {
+  color: var(--theme-toggle-hover-color);
+}
+
+html.light #cursor {
+  border-color: var(--cursor-border-color);
+}
+
+html.light #cursor.hovered {
+  background-color: var(--cursor-hover-bg);
+}
+
+html.light .site-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-color);
+}
+
+html.light .site-footer p {
+  color: var(--footer-link-color);
+}
+
+html.light .site-footer a {
+  color: var(--footer-link-color);
+}
+
+html.light .site-footer a:hover {
+  color: var(--footer-link-hover-color);
+}
+
+html.light p {
+  color: var(--text-color);
+}
+
+html.light #aboutp {
+  color: #4a90e2; /* distinct blue shade for about paragraph in light mode */
+}
+
+/* Dark mode styles */
+html.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+html.dark body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+html.dark a {
+  color: #00cfff;
+}
+
+html.dark a:hover,
+html.dark a:focus {
+  color: #00a3cc;
+}
+
+html.dark .btn-primary {
+  background-color: #00cfff;
+  color: #121212;
+  box-shadow: 0 0 10px #00cfff88;
+}
+
+html.dark .btn-primary:hover,
+html.dark .btn-primary:focus {
+  background-color: #00a3cc;
+  box-shadow: 0 0 20px #00a3cccc;
+}
+
+html.dark .btn-secondary {
+  color: #00cfff;
+  border-color: #00cfff;
+}
+
+html.dark .btn-secondary:hover,
+html.dark .btn-secondary:focus {
+  background-color: #00cfff;
+  color: #121212;
+}
+
+html.dark #theme-toggle {
+  color: #00cfff;
+}
+
+html.dark #theme-toggle:hover,
+html.dark #theme-toggle:focus {
+  color: #00a3cc;
+}
+
+html.dark #cursor {
+  border-color: #00cfff;
+}
+
+html.dark #cursor.hovered {
+  background-color: rgba(0, 207, 255, 0.3);
+}
+
+html.dark .site-footer {
+  background-color: #121212;
+  color: #666;
+}
+
+html.dark .site-footer a {
+  color: #00cfff;
+}
+
+html.dark .site-footer a:hover {
+  color: #00a3cc;
+}
+
+/* Animation for KIRA logo */
+.kira{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #00cfff;
+  cursor: default;
+  user-select: none;
+  animation: kiraGlow 2s ease-in-out infinite alternate;
+}
+@keyframes kiraGlow {
+  0% {
+    text-shadow: 0 0 5px #00cfff, 0 0 10px #00cfff, 0 0 20px #00cfff;
+    color: #00cfff;
+  }
+  100% {
+    text-shadow: 0 0 20px #00e0ff, 0 0 30px #00e0ff, 0 0 40px #00e0ff;
+    color: #00e0ff;
+  }
+}
+
+/* Marquee animation for scrolling loop section */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: marquee 20s linear infinite;
+}    
+
