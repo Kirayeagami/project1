@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rajkumar Portfolio</title>
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#00cfff" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100vh; background: #121212; color: #e0e0e0; font-family: 'Montserrat', sans-serif; }
+    body { line-height: 1.7; transition: background 0.3s, color 0.3s; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: #fff; font-weight: 800; letter-spacing: 0.01em; margin-bottom: 1.5rem; }
+    h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); }
+    h2 { font-size: clamp(2rem, 5vw, 3rem); }
+    .section-title { border-left: 6px solid #00cfff; padding-left: 1rem; margin-bottom: 3rem; color: #fff; font-weight: 800; letter-spacing: 0.01em; background: none; }
+    .navbar { background: #18181b; border-bottom: 1px solid #232323; min-height: 54px; padding: 0.5rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+    .logo-hamburger {
+      width: 44px; height: 44px; background: none; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; margin-right: 1.5rem;
+    }
+    .logo-hamburger img { width: 36px; height: 36px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: #fff; font-size: 1.05rem; font-weight: 600; padding: 0.25rem 0; border-bottom: 2px solid transparent; transition: color 0.2s, border 0.2s; text-decoration: none; }
+    .nav-links a:hover, .nav-links a:focus { color: #00cfff; border-bottom: 2px solid #00cfff; }
+    #theme-toggle { background: none; border: none; font-size: 1.5rem; color: #00cfff; margin-left: 1.5rem; cursor: pointer; transition: color 0.2s; }
+    #theme-toggle:hover { color: #fff; }
+    /* Hamburger menu for mobile */
+    @media (max-width: 900px) {
+      .nav-links { display: none; position: fixed; top: 0; right: 0; height: 100vh; width: 220px; background: #18181b; flex-direction: column; align-items: flex-start; padding: 5rem 2rem 2rem 2rem; gap: 2rem; z-index: 100; box-shadow: -2px 0 16px rgba(0,0,0,0.2); }
+      .nav-links.show { display: flex; }
+      .logo-hamburger { margin-right: 0; }
+      .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 40; }
+      .menu-overlay.show { display: block; }
+    }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; padding: 0 1rem; }
+    .hero-title {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.01em;
+      background: linear-gradient(90deg, #00cfff 10%, #fff 50%, #00cfff 90%);
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: gradientMove 3s linear infinite alternate;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    .hero-tagline {
+      text-shadow: 0 2px 16px #00cfff44, 0 1px 0 #fff;
+      letter-spacing: 0.08em;
+      animation: taglineFade 2.5s cubic-bezier(.4,0,.2,1) 1;
+    }
+    @keyframes taglineFade {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: none; }
+    }
+    .hero-desc { max-width: 600px; margin: 0 auto 2.5rem auto; color: #bdbdbd; font-size: 1.15rem; }
+    .btn-primary { background: #00cfff; color: #18181b; border: none; font-size: 1.1rem; border-radius: 9999px; font-weight: 700; letter-spacing: 0.08em; padding: 0.9rem 2.2rem; cursor: pointer; transition: background 0.2s, color 0.2s; text-transform: uppercase; }
+    .btn-primary:hover, .btn-primary:focus { background: #00a3cc; color: #fff; }
+    .chevron-scroll { position: absolute; left: 50%; bottom: 2.5rem; transform: translateX(-50%); z-index: 2; cursor: pointer; opacity: 0.85; transition: opacity 0.2s, filter 0.2s; filter: drop-shadow(0 2px 8px #00cfff44); background: none; border-radius: 50%; padding: 0.25rem; }
+    .chevron-scroll:hover { opacity: 1; filter: drop-shadow(0 4px 16px #00cfff88); }
+    .chevron { width: 64px; height: 64px; display: block; stroke: #00cfff; stroke-width: 5; fill: none; animation: chevronBounce 1.3s infinite cubic-bezier(.4,0,.2,1); transition: stroke 0.2s; }
+    .chevron-scroll:hover .chevron { stroke: #fff; }
+    @keyframes chevronBounce { 0% { transform: translateY(0); } 40% { transform: translateY(18px); } 60% { transform: translateY(12px); } 100% { transform: translateY(0); } }
+    main { width: 100%; max-width: 1100px; margin: 0 auto; }
+    section { background: none; box-shadow: none; border-radius: 0; margin-bottom: 0; padding: 7rem 0 7rem 0; border-bottom: 1px solid #232323; }
+    section:last-of-type { border-bottom: none; }
+    .project-list { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem; margin-top: 2rem; }
+    .project-card {
+      background: #18181b;
+      border-radius: 1.5rem;
+      border: 1.5px solid #232323;
+      transition: box-shadow 0.3s, transform 0.3s, border 0.3s, filter 0.3s;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      box-shadow: 0 12px 40px #00cfff44, 0 2px 0 #00cfff;
+      border: 1.5px solid #00cfff;
+      transform: translateY(-10px) scale(1.04) rotate(-1deg);
+      filter: brightness(1.08);
+    }
+    .project-card img, .project-card video { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid #232323; }
+    .project-card .card-content { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+    .project-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #fff; }
+    .project-card p { color: #bdbdbd; font-size: 1rem; margin-bottom: 1.2rem; }
+    .project-card .meta { display: flex; justify-content: space-between; color: #00cfff; font-size: 0.95rem; margin-bottom: 1.2rem; }
+    .btn-secondary { background: none; color: #00cfff; border: 2px solid #00cfff; font-size: 1rem; border-radius: 9999px; font-weight: 600; letter-spacing: 0.08em; padding: 0.6rem 1.5rem; cursor: pointer; transition: background 0.2s, color 0.2s; text-transform: uppercase; }
+    .btn-secondary:hover, .btn-secondary:focus { background: #00cfff; color: #18181b; }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+    .skill-item {
+      background: #18181b;
+      color: #00cfff;
+      border: 1px solid #232323;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 1rem;
+      padding: 0.7rem 1.5rem;
+      transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .skill-item:hover {
+      background: #00cfff;
+      color: #18181b;
+      border: 1px solid #00cfff;
+      box-shadow: 0 0 0 4px #00cfff33;
+      transform: scale(1.08) rotate(-2deg);
+    }
+    .about-section { display: flex; flex-direction: row; align-items: center; gap: 3rem; margin-top: 2rem; }
+    .about-section img { width: 140px; height: 140px; border-radius: 50%; border: 3px solid #232323; filter: grayscale(1); transition: filter 0.3s, border 0.3s; }
+    .about-section img:hover { filter: grayscale(0); border: 3px solid #00cfff; }
+    .about-section p { font-size: 1.15rem; color: #bdbdbd; }
+    .contact-section { max-width: 500px; margin: 0 auto; }
+    .contact-section form { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+    .contact-section input, .contact-section textarea { background: #18181b; color: #fff; border: 1px solid #232323; border-radius: 0.7rem; padding: 1rem; font-size: 1rem; transition: border 0.2s; }
+    .contact-section input:focus, .contact-section textarea:focus { border: 1px solid #00cfff; outline: none; }
+    .site-footer { background: #18181b; border-top: 1px solid #232323; color: #888; font-size: 1rem; padding: 2.5rem 0 1.5rem 0; text-align: center; }
+    .footer-socials { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem; }
+    .footer-socials a img { width: 28px; height: 28px; filter: grayscale(1) brightness(1.2); transition: filter 0.2s, transform 0.2s; }
+    .footer-socials a:hover img { filter: grayscale(0) brightness(1.5); transform: scale(1.18); }
+    @media (max-width: 900px) { .project-list { grid-template-columns: 1fr; } .about-section { flex-direction: column; gap: 2rem; } section { padding: 4rem 0; } }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <button class="logo-hamburger" id="hamburger" aria-label="Open menu">
+      <img src="assets/images/favicon.png" alt="KIRA Logo" />
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    <div id="menuOverlay" class="menu-overlay"></div>
+  </header>
+  <main>
+    <section id="hero" class="hero fade-in-section">
+      <div class="hero-tagline">Product Designer</div>
+      <h1 class="hero-title">Rajkumar Das</h1>
+      <div class="hero-desc">I craft beautiful and functional web experiences. Passionate about modern design, clean code, and bringing ideas to life. Let's build something amazing together!</div>
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#projects" class="chevron-scroll" aria-label="Scroll to projects">
+        <svg class="chevron" viewBox="0 0 48 48">
+          <polyline points="12,18 24,30 36,18" />
+        </svg>
+      </a>
+    </section>
+    <section id="projects" class="fade-in-section">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <video autoplay muted loop playsinline poster="assets/images/project1.jpg">
+            <source src="assets/videos/project1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="card-content">
+            <h3>Fashion Ecom</h3>
+            <p>K I R A is an e-commerce website designed to provide users with a seamless shopping experience. The platform allows users to browse, search, and purchase a variety of products.</p>
+            <div class="meta"><span>2025</span><span>PHP, HTML, CSS, JavaScript</span></div>
+            <a href="https://github.com/Kirayeagami/fashion_experiment" class="btn-secondary" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <video autoplay muted loop playsinline poster="assets/images/project1.jpg">
+            <source src="assets/videos/project2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="card-content">
+            <h3>Fun Experiment</h3>
+            <p>This is a Fun Project about Portfolio.</p>
+            <div class="meta"><span>2025</span><span>HTML, CSS</span></div>
+            <a href="https://github.com/Kirayeagami/portfolios" class="btn-secondary" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="assets/images/project1.jpg" alt="Project 3" />
+          <div class="card-content">
+            <h3>Portfolio Redesign</h3>
+            <p>A modern redesign of my portfolio with new animations, improved accessibility, and a fresh look.</p>
+            <div class="meta"><span>2024</span><span>HTML, CSS, JS, GSAP</span></div>
+            <a href="https://github.com/Kirayeagami/portfolio_redesign" class="btn-secondary" target="_blank" rel="noopener">View Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="fade-in-section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-list">
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">CSS3</div>
+        <div class="skill-item">TailwindCSS</div>
+        <div class="skill-item">Git</div>
+        <div class="skill-item">UI/UX Design</div>
+      </div>
+    </section>
+    <section id="about" class="fade-in-section">
+      <h2 class="section-title">About</h2>
+      <div class="about-section">
+        <img src="https://i.ibb.co/WvdZfr4G/IMG20250127171054.jpg" alt="Rajkumar Profile" />
+        <p>I am a passionate developer and designer focused on creating beautiful, functional, and user-friendly web experiences. I specialize in modern web technologies and enjoy bringing ideas to life with clean code and creative design.</p>
+      </div>
+    </section>
+    <section id="contact" class="fade-in-section">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-section">
+        <form action="mailto:07632032805raj@gmail.com" method="POST" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-socials">
+      <a href="https://github.com/Kirayeagami" target="_blank" rel="noopener" aria-label="GitHub"><img src="assets/images/github.svg" alt="GitHub" /></a>
+      <a href="https://linkedin.com/in/rajkumar-das-7391a7313" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="assets/images/linkedin.svg" alt="LinkedIn" /></a>
+      <a href="https://www.twitter.com/@KiraYeagami" target="_blank" rel="noopener" aria-label="Twitter"><img src="assets/images/twitter.svg" alt="Twitter" /></a>
+      <a href="https://www.instagram.com/kira_yeagami?igsh=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/images/instagram.svg" alt="Instagram" /></a>
+    </div>
+    <div>&copy; 2025 Rajkumar. All rights reserved.</div>
+  </footer>
+  <script>
+    // Dark mode toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle && themeToggle.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      if(document.body.classList.contains('dark-mode')) {
+        themeToggle.textContent = '☀️';
+        document.body.style.backgroundColor = '#18181b';
+        document.body.style.color = '#e0e0e0';
+      } else {
+        themeToggle.textContent = '🌙';
+        document.body.style.backgroundColor = '#121212';
+        document.body.style.color = '#e0e0e0';
+      }
+    });
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, '', '#' + targetId);
+        }
+      });
+    });
+    // Section fade-in on scroll
+    function revealSections() {
+      document.querySelectorAll('.fade-in-section').forEach(function(section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('resize', revealSections);
+    revealSections();
+    // Hamburger menu logic
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const menuOverlay = document.getElementById('menuOverlay');
+    function toggleMenu(forceClose = false) {
+      const isOpen = navLinks.classList.contains('show');
+      if (forceClose && !isOpen) return;
+      navLinks.classList.toggle('show', !isOpen || !forceClose);
+      menuOverlay.classList.toggle('show', !isOpen || !forceClose);
+      if (!isOpen && !forceClose) {
+        setTimeout(() => navLinks.querySelector('a').focus(), 200);
+      } else if (isOpen || forceClose) {
+        hamburger.focus();
+      }
+    }
+    hamburger.addEventListener('click', () => toggleMenu());
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+    menuOverlay.addEventListener('click', () => toggleMenu());
+    document.addEventListener('keydown', (e) => {
+      if ((e.key === 'Escape' || e.key === 'Esc') && navLinks.classList.contains('show')) {
+        toggleMenu(true);
+      }
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) toggleMenu(true);
+      });
+    });
+  </script>
+</body>
+</html>

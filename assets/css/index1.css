@@ -136,6 +136,23 @@ a:focus {
   outline: none;
 }
 
+    /* Chevron scroll indicator  */
+.chevron-scroll:hover { opacity: 1; }
+.chevron {
+    width: 48px; height: 48px; display: block;
+    stroke: #00cfff;
+    margin: 0 auto;
+    stroke-width: 4;
+    fill: none;
+    animation: chevronBounce 1.2s infinite cubic-bezier(.4,0,.2,1);
+}
+@keyframes chevronBounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(16px); }
+  100% { transform: translateY(0); }
+}
+
+
 /* Layout containers */
 .container {
   max-width: 1200px;
@@ -207,6 +224,23 @@ section {
 #about img:hover {
   filter: grayscale(0%);
 }
+
+    .about-title {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.01em;
+      background: linear-gradient(90deg, #00cfff 10%, #fff 50%, #00cfff 90%);
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: gradientMove 3s linear infinite alternate;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
 
 #about p {
   max-width: 600px;
@@ -617,3 +651,4 @@ html.dark .site-footer a:hover {
   overflow: hidden;
   animation: marquee 20s linear infinite;
 }    
+

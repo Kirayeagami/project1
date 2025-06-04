@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rajkumar | Creative Developer</title>
+  <link rel="shortcut icon" href="https://i.ibb.co/7NV0mNm9/IMG-20230803-013043224-transformed-x4-x16.jpg" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/index1.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <style>
+    body { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="dark">
+  <!-- Loader / Logo -->
+  <div class="logo kira" id="preloader" aria-label="Logo KIRA" style="position: fixed; top: 0.5rem; left: 1rem; z-index: 1000; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: #00cfff; cursor: default; user-select: none;">
+    KIRA♾️
+  </div>
+  <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-bg-anim" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <p class="hero-animate">Product Designer</p>
+    <h1 class="hero-animate delay-100">Creating <span>delightful</span> <br /> experiences <span>for your business</span></h1>
+    <p class="hero-animate delay-200">I craft beautiful and functional web experiences. Passionate about modern design, clean code, and bringing ideas to life. Let's build something amazing together!</p>
+    <a href="#projects" class="btn-primary hero-animate delay-300">View My Work</a>
+  </section>
+
+      <!-- Chevron scroll indicator -->
+      <a href="#projects" class="chevron-scroll" aria-label="Scroll to projects">
+        <svg class="chevron" viewBox="0 0 48 48">
+          <polyline points="12,18 24,30 36,18" />
+        </svg>
+      </a>
+    </section>
+
+  <!-- About Section -->
+  <section id="about" class="fade-in-section">
+    <h2>About Me</h2>
+    <div>
+      <img src="https://i.ibb.co/WvdZfr4G/IMG20250127171054.jpg" alt="Rajkumar Profile" />
+      <h1 class="about-title">Rajkumar Das</h1>
+      <p id="aboutp">I am a passionate developer and designer focused on creating beautiful, functional, and user-friendly web experiences. I specialize in modern web technologies and enjoy bringing ideas to life with clean code and creative design.</p>
+    </div>
+  </section>
+
+    <!-- Scrolling Marquee/Loop Section -->
+    <div class="footer-1-scrolling-section py-8">
+      <div class="scrolling-loop-item flex gap-4 justify-center items-center animate-marquee">
+        <h1 class="footer-1-heading text-2xl font-bold">portfolio</h1>
+        <span class="mx-2">•</span>
+        <h1 class="footer-1-heading text-2xl font-bold">Rajkumar</h1>
+        <span class="mx-2">•</span>
+        <h1 class="footer-1-heading text-2xl font-bold">Das☮️</h1>
+        <span class="mx-2">•</span>
+        <h1 class="footer-1-heading text-2xl font-bold">KIRA</h1>
+        <span class="mx-2">•</span>
+        <h1 class="footer-1-heading text-2xl font-bold">portfolio</h1>
+        <span class="mx-2">•</span>
+        <h1 class="footer-1-heading text-2xl font-bold">Rajkumar</h1>
+        <span class="mx-2">•</span>
+        <h1 class="footer-1-heading text-2xl font-bold">Das</h1>
+        <span class="mx-2">•</span>
+        <h1 class="footer-1-heading text-2xl font-bold">KIRA</h1>
+      </div>
+    </div>  
+
+  <!-- Projects Section -->
+  <section id="projects" class="fade-in-section">
+    <h2>My Projects</h2>
+    <div class="grid">
+      <article class="project-card">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/project1.mp4" type="video/mp4" />
+        </video>
+        <div>
+          <h3>Fashion Ecom</h3>
+          <p>K I R A is an e-commerce website designed to provide users with a seamless shopping experience.</p>
+          <div><span>2025</span> <span>PHP, HTML, CSS, JS</span></div>
+          <a href="https://github.com/Kirayeagami/fashion_experiment" class="btn-secondary">View Project</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <video autoplay muted loop playsinline>
+          <source src="assets/videos/project2.mp4" type="video/mp4" />
+        </video>
+        <div>
+          <h3>Fun Experiment</h3>
+          <p>This is a fun portfolio project.</p>
+          <div><span>2025</span> <span>HTML, CSS</span></div>
+          <a href="https://github.com/Kirayeagami/portfolios" class="btn-secondary">View Project</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="fade-in-section">
+    <h2>Skills & Services</h2>
+    <div class="grid">
+      <div class="skill-item">JavaScript</div>
+      <div class="skill-item">CSS3</div>
+      <div class="skill-item">TailwindCSS</div>
+      <div class="skill-item">Git</div>
+      <div class="skill-item">UI/UX Design</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade-in-section">
+    <h2>Let's Work Together</h2>
+    <p>Feel free to reach out to me via email or social media.</p>
+    <form action="mailto:07632032805raj@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer bg-gray-900 text-gray-500 text-center py-6">
+    <div class="container">
+      <div class="flex justify-center gap-6 mt-4">
+        <a href="https://github.com/Kirayeagami" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-blue-400">GitHub</a>
+        <a href="https://linkedin.com/in/rajkumar-das-7391a7313" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-blue-400">LinkedIn</a>
+        <a href="https://www.twitter.com/@KiraYeagami" target="_blank" rel="noopener" aria-label="Twitter" class="hover:text-blue-400">Twitter</a>
+        <a href="https://www.instagram.com/kira_yeagami?igsh=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-blue-400">Instagram</a>
+        <p>&copy; 2025 Rajkumar. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
